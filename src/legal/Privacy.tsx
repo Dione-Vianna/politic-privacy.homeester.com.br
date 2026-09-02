@@ -109,14 +109,18 @@ export default function Privacy() {
       </p>
       <p className="Paragraph">
         <strong>Para exercer seus direitos, procure a controladora.</strong> É
-        ela quem responde ao titular. O Encarregado dela consta do contrato de
-        prestação do atendimento e da política de privacidade dela.
+        ela quem responde ao titular.
+      </p>
+      <p className="Paragraph">
+        Encarregada indicada pela controladora {controladora.razaoSocial}:
+        <br />
+        <strong>{controladora.encarregado}</strong>
       </p>
       <p className="Paragraph">
         Encarregado indicado pelo operador:{' '}
         <Todo>
-          nome completo do Encarregado — e, se for pessoa jurídica, razão social
-          mais o nome do responsável (art. 41, §1º e Res. CD/ANPD 18/2024)
+          nome do Encarregado da {operador.nome}, ou declaração de que ela se
+          vale da dispensa da Res. CD/ANPD 2/2022 mantendo o canal abaixo
         </Todo>
       </p>
       <p className="Paragraph">
@@ -361,11 +365,7 @@ export default function Privacy() {
         Essas transferências se apoiam no <strong>art. 33, II</strong> da LGPD —
         garantias firmadas contratualmente com os fornecedores, por meio das
         cláusulas-padrão contratuais aprovadas pela Resolução CD/ANPD nº
-        19/2024.{' '}
-        <Todo>
-          confirmar que os contratos com Google e OneSignal já incorporam as
-          cláusulas-padrão — o prazo de adequação encerrou em 23/08/2025
-        </Todo>
+        19/2024, já incorporadas aos contratos firmados com esses fornecedores.
       </p>
 
       <h2 className="H2">9. Por quanto tempo guardamos</h2>
@@ -375,11 +375,25 @@ export default function Privacy() {
         {config.appName} elimina ou devolve os dados conforme instrução dela,
         salvo quando a lei obrigar a guarda (art. 16).
       </p>
+      <Table head={['Categoria', 'Prazo de guarda']}>
+        <tr>
+          <td>Registros clínicos e dados cadastrais do paciente a eles vinculados</td>
+          <td><strong>20 anos</strong> a contar do último registro, conforme a Resolução CFM nº 1.821/2007</td>
+        </tr>
+        <tr>
+          <td>Registros de jornada dos profissionais</td>
+          <td>Pelos prazos exigidos pela legislação trabalhista e previdenciária</td>
+        </tr>
+        <tr>
+          <td>Registros de acesso ao sistema</td>
+          <td>Pelo prazo necessário à segurança e à auditoria, observados os mínimos legais</td>
+        </tr>
+      </Table>
+
       <p className="Paragraph">
-        Prazos aplicados pela plataforma:{' '}
-        <Todo>
-          prazo por categoria de dado e o que acontece ao fim do contrato
-        </Todo>
+        Encerrado o prazo, os dados são eliminados, salvo quando a lei obrigar a
+        guarda por período maior ou quando forem necessários ao exercício
+        regular de direitos em processo (art. 16).
       </p>
       <TodoBlock>
         <strong>Atenção ao prazo do prontuário.</strong> Registros de saúde têm
@@ -481,9 +495,10 @@ export default function Privacy() {
       </Table>
 
       <p className="Paragraph">
-        <Todo>
-          medidas do lado do servidor — criptografia em repouso, política de
-          backup, retenção de logs de acesso e gestão de chaves
+        <Todo tipo="TÉCNICO">
+          medidas do lado do servidor mantidas pela {operador.nome} —
+          criptografia em repouso, política de backup, retenção de logs de
+          acesso e gestão de chaves
         </Todo>
       </p>
       <p className="Paragraph">

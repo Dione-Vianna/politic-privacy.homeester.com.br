@@ -29,6 +29,7 @@ export const operador = {
  */
 export const controladora = {
   razaoSocial: 'HOME ESTER SAÚDE DOMICILIAR LTDA',
+  encarregado: 'Ester Rita Nunes — Sócia-Administradora',
   cnpj: '42.456.578/0001-05',
   endereco: 'Rua Heitor de Moura Estevão, 208 — Várzea',
   cidade: 'Teresópolis/RJ — CEP 25953-090',
