@@ -424,11 +424,48 @@ export default function Privacy() {
 
       <h2 className="H2">11. Segurança</h2>
       <p className="Paragraph">
-        Adotamos medidas técnicas e administrativas para proteger seus dados,
-        entre elas tráfego criptografado (HTTPS), autenticação individual,
-        acesso restrito conforme o perfil do usuário e armazenamento em
-        infraestrutura com controles de segurança.{' '}
-        <Todo>demais medidas adotadas, conforme o art. 46</Todo>
+        Adotamos medidas técnicas e administrativas aptas a proteger os dados
+        pessoais de acessos não autorizados e de situações acidentais ou
+        ilícitas de destruição, perda, alteração, comunicação ou difusão
+        (art. 46):
+      </p>
+
+      <Table head={['Medida', 'O que faz']}>
+        <tr>
+          <td>Transmissão criptografada</td>
+          <td>Todo o tráfego entre o aplicativo e os servidores usa HTTPS com TLS</td>
+        </tr>
+        <tr>
+          <td>Autenticação individual</td>
+          <td>Cada pessoa acessa com credencial própria. As contas são criadas e revogadas pela controladora, não por autocadastro</td>
+        </tr>
+        <tr>
+          <td>Controle de acesso por perfil</td>
+          <td>O que cada usuário visualiza depende do perfil atribuído a ele</td>
+        </tr>
+        <tr>
+          <td>Rastreabilidade dos registros</td>
+          <td>Registros clínicos e de jornada ficam vinculados ao usuário que os criou, com data e hora</td>
+        </tr>
+        <tr>
+          <td>Infraestrutura no Brasil</td>
+          <td>Os dados do serviço são armazenados e processados na região de São Paulo da AWS</td>
+        </tr>
+        <tr>
+          <td>Permissões mínimas no aplicativo</td>
+          <td>O aplicativo não acessa câmera, microfone nem localização em segundo plano, e não usa identificador de publicidade</td>
+        </tr>
+        <tr>
+          <td>Minimização no dispositivo</td>
+          <td>Encerrar a sessão remove do aparelho os dados de autenticação</td>
+        </tr>
+      </Table>
+
+      <p className="Paragraph">
+        <Todo>
+          medidas do lado do servidor — criptografia em repouso, política de
+          backup, retenção de logs de acesso e gestão de chaves
+        </Todo>
       </p>
       <p className="Paragraph">
         Nenhum sistema é totalmente imune. Caso ocorra incidente de segurança
