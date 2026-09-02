@@ -21,7 +21,7 @@
 | Certificado ACM | ✅ `ISSUED` em `us-east-1`, validação DNS automática |
 | CloudFront | ✅ `E7NGK49DOUXBB` — `dk6r3z3e6re2p.cloudfront.net` |
 | Registro DNS do subdomínio | ✅ A + AAAA alias na zona `homeester.com.br` |
-| Secrets no GitHub | ⬜ |
+| Secrets no GitHub | ✅ 4 secrets configurados, pipeline validado em produção |
 | Revisão LGPD do conteúdo | ⬜ |
 
 ---
