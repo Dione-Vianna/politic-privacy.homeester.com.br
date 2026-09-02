@@ -492,14 +492,23 @@ export default function Privacy() {
           <td>Minimização no dispositivo</td>
           <td>Encerrar a sessão remove do aparelho os dados de autenticação</td>
         </tr>
+        <tr>
+          <td>Expiração de sessão</td>
+          <td>A sessão expira em 24 horas, exigindo nova autenticação</td>
+        </tr>
+        <tr>
+          <td>Cópias de segurança</td>
+          <td>A base de dados é objeto de backup periódico</td>
+        </tr>
+        <tr>
+          <td>Registro de operações</td>
+          <td>As operações no servidor são registradas em log de infraestrutura, para auditoria e apuração de incidentes</td>
+        </tr>
       </Table>
 
       <p className="Paragraph">
-        <Todo tipo="TÉCNICO">
-          medidas do lado do servidor mantidas pela {operador.nome} —
-          criptografia em repouso, política de backup, retenção de logs de
-          acesso e gestão de chaves
-        </Todo>
+        Esta lista não é exaustiva: outras medidas técnicas e organizacionais
+        são adotadas e revisadas periodicamente pelo operador.
       </p>
       <p className="Paragraph">
         Nenhum sistema é totalmente imune. Caso ocorra incidente de segurança
