@@ -38,9 +38,7 @@ export function Page({ children, current }: PageProps) {
 
       <footer className="SiteFooter">
         <div className="SiteFooterInner">
-          <span>
-            © {new Date().getFullYear()} {config.developer}
-          </span>
+          <span>Desenvolvido por {config.developer}</span>
           <span>
             <a href={`mailto:${config.email}`}>{config.email}</a>
           </span>
