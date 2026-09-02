@@ -1,166 +1,215 @@
 import { config } from './config';
+import { Todo, TodoBlock } from './Todo';
+import { routes } from '../routes';
 import './styles.css';
 
 export default function Terms() {
   return (
     <div className="Container">
-      <h1 className="H1">Termos de serviço</h1>
+      <h1 className="H1">Termos de Serviço</h1>
+
       <p className="Paragraph">
-        Estes Termos de Serviço governam seu uso do site localizado em {''}
-        <a className="A" href={config.appOrigin}>
-          {config.appOrigin}
-        </a>{' '}
-        e quaisquer serviços relacionados fornecido por {config.appName}.
-      </p>
-      <p className="Paragraph">
-        Acessando{' '}
+        Estes Termos regem o uso do aplicativo {config.appName} e dos serviços
+        relacionados disponíveis em{' '}
         <a className="A" href={config.appOrigin}>
           {config.appOrigin}
         </a>
-        , você concorda cumprir estes Termos de Serviço e cumprir todas as leis
-        aplicáveis e regulamentos. Se você não concorda com estes Termos de
-        Serviço, você esta proibido de usar ou acessar este site ou usando
-        qualquer outro serviços prestados por {config.appName}.
+        . Ao usar o aplicativo, você concorda com estes Termos. Se não
+        concordar, não o utilize.
+      </p>
+
+      <p className="Paragraph">
+        Última atualização: <Todo>data da publicação definitiva</Todo>
+      </p>
+
+      <TodoBlock>
+        <strong>Pendências antes de publicar.</strong> Os marcadores destacados
+        dependem de definição jurídica e não podem sobreviver à publicação.
+      </TodoBlock>
+
+      <h2 className="H2">1. Quem presta o serviço</h2>
+      <p className="Paragraph">
+        <Todo>razão social, CNPJ e endereço completo</Todo>
+      </p>
+
+      <h2 className="H2">2. O que é o {config.appName}</h2>
+      <p className="Paragraph">
+        O {config.appName} é uma plataforma de gestão de atendimento domiciliar.
+        Ele permite que empresas prestadoras registrem atendimentos, evolução
+        clínica dos pacientes, tarefas e jornada de trabalho dos profissionais.
       </p>
       <p className="Paragraph">
-        Nós, {config.appName}, reservamos o direito de revisar e alterar
-        qualquer um desses termos de serviço a nosso exclusivo critério. Ao
-        fazer isso, vamos atualizar este página. Quaisquer alterações nestes
-        Termos de Serviço entrarão em vigor imediatamente a partir da data de
-        publicação.
+        <strong>
+          O {config.appName} é uma ferramenta de registro. Ele não presta
+          serviço de saúde, não realiza diagnóstico, não prescreve tratamento e
+          não substitui avaliação profissional.
+        </strong>{' '}
+        A responsabilidade clínica pelo atendimento e pelo conteúdo dos
+        registros é do profissional de saúde e da empresa que o emprega.
+      </p>
+
+      <h2 className="H2">3. Quem pode usar</h2>
+      <p className="Paragraph">
+        O acesso é fornecido pela empresa contratante aos seus profissionais e,
+        quando aplicável, a pacientes e responsáveis. Não há cadastro público: a
+        conta é criada e revogada pela contratante.
       </p>
       <p className="Paragraph">
-        Estes Termos de Serviço foram atualizados pela última vez em 01 de
-        janeiro de 2022.
+        O uso exige maioridade e capacidade civil, salvo quando o titular estiver
+        representado na forma da lei.
       </p>
-      <h2 className="H2">Limitações de uso</h2>
+
+      <h2 className="H2">4. Conta e credenciais</h2>
+      <ul className="Ul">
+        <li className="Li">
+          Sua conta é pessoal e intransferível. Não compartilhe credenciais;
+        </li>
+        <li className="Li">
+          Você é responsável pelas ações realizadas com a sua conta;
+        </li>
+        <li className="Li">
+          Comunique imediatamente qualquer uso não autorizado pelos canais
+          abaixo;
+        </li>
+        <li className="Li">
+          Registros clínicos e de ponto ficam vinculados ao seu usuário, com
+          data e hora.
+        </li>
+      </ul>
+
+      <h2 className="H2">5. Licença de uso</h2>
       <p className="Paragraph">
-        Ao usar este site, você garante em nome de si mesmo, seus usuários, e
-        outras partes que você representa que você não vai:
+        Concedemos a você uma licença limitada, pessoal, revogável, não exclusiva
+        e intransferível para instalar e usar o aplicativo nos seus dispositivos,
+        exclusivamente para as finalidades previstas nestes Termos. A licença não
+        transfere propriedade.
       </p>
+
+      <h2 className="H2">6. Uso aceitável</h2>
+      <p className="Paragraph">Ao usar o {config.appName}, você não deve:</p>
       <ol className="Ol">
         <li className="Li">
-          modificar, copiar, preparar trabalhos derivados, descompilar ou fazer
-          engenharia reversa de quaisquer materiais e software contidos neste
-          site;
+          registrar informação clínica falsa, imprecisa ou de paciente que não
+          esteja sob seus cuidados;
         </li>
         <li className="Li">
-          Remova quaisquer direitos autorais ou outras notórias proprietárias de
-          qualquer material e software neste site;
+          acessar, copiar ou divulgar dados de pacientes fora da finalidade do
+          atendimento — dados de saúde são protegidos por sigilo profissional e
+          pela LGPD;
         </li>
         <li className="Li">
-          transferir os materiais para outra pessoa ou "espelhar" os materiais
-          em qualquer outro servidor;
+          burlar o registro de localização ou de jornada;
         </li>
         <li className="Li">
-          conscientemente ou negligentemente use este site ou qualquer um dos
-          seus associados, serviços de uma forma que abuse ou interrompe nossas
-          redes ou qualquer outro serviço que {config.appName} fornece;
+          descompilar, fazer engenharia reversa ou tentar extrair o código-fonte
+          do aplicativo;
         </li>
         <li className="Li">
-          Use este site ou seus serviços associados para transmitir ou publicar
-          qualquer material de assédio, indecente, obsceno, fraudulento ou
-          ilícito;
+          usar o serviço para fim ilícito, ou de modo que comprometa sua
+          segurança, integridade ou disponibilidade;
         </li>
         <li className="Li">
-          Use este site ou seus serviços associados em violação de quaisquer
-          leis ou regulamentos aplicáveis;
-        </li>
-        <li className="Li">
-          Use este site em conjunto com o envio de publicidade ou spam não
-          autorizado;
-        </li>
-        <li className="Li">
-          coletar dados do usuário sem o consentimento do usuário; ou
-        </li>
-        <li className="Li">
-          Use este site ou seus serviços associados de tal maneira que possam
-          infringir a privacidade, os direitos de propriedade intelectual ou
-          outros direitos de terceiros.
+          tentar acessar contas, dados ou áreas do sistema sem autorização.
         </li>
       </ol>
-      <h2 className="H2">Propriedade intelectual</h2>
+
+      <h2 className="H2">7. Registros clínicos</h2>
       <p className="Paragraph">
-        A propriedade intelectual dos materiais contidos neste site são de
-        propriedade ou licenciados para {config.appName} e são protegidos por
-        direitos autorais e leis de marcas comerciais aplicáveis. Concedemos aos
-        nossos usuários permissão para baixar uma cópia dos materiais para uso
-        pessoal, não comercial e transitório.
+        Os registros inseridos no aplicativo integram a documentação do
+        atendimento. Uma vez salvos, podem estar sujeitos a prazos legais de
+        guarda e a restrições de alteração, para preservar a integridade do
+        histórico. Correções são feitas por novo registro, mantendo-se o
+        anterior e sua autoria.
+      </p>
+
+      <h2 className="H2">8. Propriedade intelectual</h2>
+      <p className="Paragraph">
+        O aplicativo, sua marca, interface, código e documentação pertencem ao{' '}
+        {config.appName} ou a seus licenciadores, e são protegidos pela
+        legislação de direitos autorais e propriedade industrial.
       </p>
       <p className="Paragraph">
-        Isso constitui a concessão de uma licença, não uma transferência de
-        título. Esta licença será rescindida automaticamente se você violar
-        qualquer uma dessas restrições ou os Termos de Serviço, e pode ser
-        rescindida por {config.appName} a qualquer momento.
+        Os dados inseridos pela empresa contratante e por seus profissionais
+        permanecem sob titularidade dela e dos respectivos titulares. Nós os
+        tratamos conforme a{' '}
+        <a className="A" href={routes.privacy}>
+          Política de Privacidade
+        </a>
+        .
       </p>
-      <h2 className="H2">Responsabilidade</h2>
+
+      <h2 className="H2">9. Lojas de aplicativos</h2>
       <p className="Paragraph">
-        Nosso site e os materiais em nosso site são fornecidos "no estado em que
-        se encontram". Na medida permitida por lei, {config.appName} não oferece
-        garantias, expressas ou implícitas, e por meio deste se isenta e nega
-        todas as outras garantias, incluindo, sem limitação, garantias
-        implícitas ou condições de comercialização, adequação a uma finalidade
-        específica ou não violação de propriedade intelectual, ou outra violação
-        de direitos.
+        O aplicativo é distribuído pela App Store e pelo Google Play. Ao
+        instalá-lo, você também se sujeita aos termos dessas lojas. Elas não são
+        parte destes Termos e não têm qualquer responsabilidade pelo aplicativo
+        ou por seu conteúdo.
       </p>
+
+      <h2 className="H2">10. Disponibilidade e suporte</h2>
       <p className="Paragraph">
-        Em nenhum caso {config.appName} ou seus fornecedores serão responsáveis
-        por qualquer perda consequente sofrida ou incorrida por você ou qualquer
-        terceiro decorrente do uso ou incapacidade de usar este site ou os
-        materiais neste site, mesmo se {config.appName} ou um representante
-        autorizado tiver sido notificado , oralmente ou por escrito, da
-        possibilidade de tais danos.
-      </p>
-      <p className="Paragraph">
-        No campo deste acordo, "perda consequencial" inclui qualquer perda
-        consequencial, perda indireta, perda real ou prevista de lucro, perda de
-        benefício, perda de receita, perda de negócios, perda de boa vontade,
-        perda de oportunidade, perda de economia, perda de reputação, perda de
-        uso e / ou perda ou corrupção de dados, seja sob estatuto, contrato,
-        equidade, ato ilícito (incluindo negligência), indemnização ou de outra
-        forma.
+        Empenhamo-nos em manter o serviço disponível, mas ele pode ser
+        interrompido para manutenção, atualização ou por causas fora do nosso
+        controle. Podemos alterar, suspender ou descontinuar funcionalidades,
+        com aviso prévio sempre que a mudança for relevante.
       </p>
       <p className="Paragraph">
-        Como algumas jurisdições não permitem limitações nas garantias
-        implícitas ou limitações de responsabilidade por danos consequentes ou
-        incidentais, essas limitações podem não se aplicar a você.
+        Condições de disponibilidade e suporte contratadas pela empresa:{' '}
+        <Todo>SLA, se houver contrato específico</Todo>
       </p>
-      <h2 className="H2">Precisão dos materiais</h2>
+
+      <h2 className="H2">11. Limitação de responsabilidade</h2>
       <p className="Paragraph">
-        Os materiais que aparecem em nosso site não são abrangentes e são apenas
-        para fins de informação geral. {config.appName} não garante ou faz
-        qualquer representação quanto à precisão, resultados prováveis ​​ou
-        confiabilidade do uso dos materiais neste site, ou de outra forma em
-        relação a tais materiais ou em quaisquer recursos vinculados a este
-        site.
+        O aplicativo é fornecido no estado em que se encontra. Na máxima extensão
+        permitida pela lei, não respondemos por lucros cessantes, perda de
+        oportunidade, de receita ou de dados decorrentes do uso ou da
+        impossibilidade de uso do serviço.
       </p>
-      <h2 className="H2">Links</h2>
       <p className="Paragraph">
-        {config.appName} não revisou todos os sites vinculados ao seu site e não
-        é responsável pelo conteúdo de qualquer um desses sites vinculados. A
-        inclusão de qualquer a não implica endosso, aprovação ou controle por
-        parte da {config.appName} do site. O uso de qualquer um desses sites
-        vinculados é por sua própria conta e risco e recomendamos enfaticamente
-        que você faça suas próprias investigações com relação à adequação desses
-        sites.
+        <strong>
+          Nada nestes Termos afasta a responsabilidade clínica do profissional de
+          saúde ou da empresa prestadora perante o paciente
+        </strong>
+        , nem limita direitos que a lei não permite limitar, incluindo os do
+        Código de Defesa do Consumidor.
       </p>
-      <h2 className="H2">Direito de rescisão</h2>
+
+      <h2 className="H2">12. Vigência e encerramento</h2>
       <p className="Paragraph">
-        Podemos suspender ou rescindir seu direito de usar nosso site e
-        rescindir estes Termos de Serviço imediatamente mediante notificação por
-        escrito a você por qualquer violação destes Termos de Serviço.
+        Estes Termos valem enquanto você usar o aplicativo. A empresa contratante
+        pode revogar seu acesso a qualquer momento. Podemos suspender ou encerrar
+        o acesso em caso de violação destes Termos, mediante aviso, salvo quando
+        houver risco imediato à segurança ou aos dados.
       </p>
-      <h2 className="H2">Separação</h2>
       <p className="Paragraph">
-        Qualquer um destes Termos de Serviço que seja total ou parcialmente nulo
-        ou inexequível é interrompido na medida em que é nulo ou inexequível. A
-        validade do restante destes Termos de Serviço não é afetada.
+        Encerrado o acesso, a guarda e a eliminação dos dados seguem os prazos
+        descritos na{' '}
+        <a className="A" href={routes.privacy}>
+          Política de Privacidade
+        </a>
+        .
       </p>
-      <h2 className="H2">Lei Aplicável</h2>
+
+      <h2 className="H2">13. Alterações nestes Termos</h2>
       <p className="Paragraph">
-        Estes Termos de Serviço são regidos e interpretados de acordo com as
-        leis do Brasil. Você se submete irrevogavelmente à jurisdição exclusiva
-        dos tribunais desse estado ou local.
+        Podemos alterar estes Termos. A versão vigente é sempre a publicada nesta
+        página, e a data de atualização no topo é revisada a cada mudança.
+        Alterações relevantes serão comunicadas pelos canais do aplicativo. O uso
+        após a mudança significa concordância.
+      </p>
+
+      <h2 className="H2">14. Lei aplicável e foro</h2>
+      <p className="Paragraph">
+        Estes Termos são regidos pelas leis brasileiras. Fica eleito o foro de{' '}
+        <Todo>comarca do foro de eleição</Todo>, com renúncia a qualquer outro,
+        ressalvada a competência legal do domicílio do consumidor.
+      </p>
+
+      <h2 className="H2">15. Contato</h2>
+      <p className="Paragraph">
+        <a className="A" href={`mailto:${config.email}`}>
+          {config.email}
+        </a>
       </p>
     </div>
   );
