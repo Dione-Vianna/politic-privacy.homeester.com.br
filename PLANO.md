@@ -85,11 +85,13 @@ Consequências:
 
 1. ✅ **`config.ts` corrigido.** Usava `window.location.origin`, o que faria os
    Termos se referirem a si mesmos. Agora aponta fixo para
-   `https://home-care.interfacesoftware.com.br`.
+   `https://systemhomeester.com.br`.
 
-2. ✅ **E-mail de contato definido.** `src/legal/config.ts` agora usa
-   `contato@interfacesoftware.com.br` — o canal oficial de exercício dos
-   direitos do titular.
+2. ✅ **Operadora separada da desenvolvedora.** O Home Care é empresa distinta
+   da Interface Software. `appName` (quem opera o serviço, citado 17× nos
+   textos legais) é **Home Care**; a Interface Software aparece só como
+   `developer`, no rodapé, junto ao contato provisório
+   `contato@interfacesoftware.com.br`.
 
 3. ⬜ **LGPD e dado sensível de saúde.** Home care trata **dado pessoal
    sensível** (art. 11). A política atual é genérica e não cobre: base legal

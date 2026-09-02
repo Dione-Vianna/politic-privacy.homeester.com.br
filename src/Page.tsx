@@ -15,7 +15,7 @@ export function Page({ children, current }: PageProps) {
       <header className="SiteHeader">
         <div className="SiteHeaderInner">
           <a className="SiteBrand" href={routes.home}>
-            Home Care · {config.appName}
+            {config.appName}
           </a>
           <nav className="SiteNav" aria-label="Documentos legais">
             <a
@@ -39,7 +39,7 @@ export function Page({ children, current }: PageProps) {
       <footer className="SiteFooter">
         <div className="SiteFooterInner">
           <span>
-            © {new Date().getFullYear()} {config.appName}
+            © {new Date().getFullYear()} {config.developer}
           </span>
           <span>
             <a href={`mailto:${config.email}`}>{config.email}</a>

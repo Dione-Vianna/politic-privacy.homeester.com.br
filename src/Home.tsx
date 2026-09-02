@@ -6,9 +6,8 @@ export function Home() {
     <div className="Home">
       <h1 className="HomeTitle">Documentos legais</h1>
       <p className="HomeLead">
-        Política de Privacidade e Termos de Serviço do Home Care, operado por{' '}
-        {config.appName}. Ao usar o aplicativo você concorda com os dois
-        documentos abaixo.
+        Política de Privacidade e Termos de Serviço do {config.appName}. Ao
+        usar o aplicativo você concorda com os dois documentos abaixo.
       </p>
 
       <ul className="HomeList">
