@@ -101,25 +101,31 @@ export default function Privacy() {
         {operador.cidade}
       </p>
 
-      <h2 className="H2">2. Encarregado pelo tratamento de dados (DPO)</h2>
+      <h2 className="H2">2. Encarregado e canal de atendimento</h2>
       <p className="Paragraph">
-        <strong>Para exercer seus direitos, procure a controladora.</strong> É
-        ela quem responde ao titular. O Encarregado dela é indicado no contrato
-        de prestação do atendimento ou na política de privacidade dela própria.
+        O <strong>Encarregado</strong> é a pessoa indicada para servir de canal
+        de comunicação entre você, quem trata seus dados e a Autoridade Nacional
+        de Proteção de Dados (art. 5º, VIII).
       </p>
       <p className="Paragraph">
-        O {config.appName}, como operador, mantém seu próprio canal para
-        assuntos de proteção de dados relativos à plataforma:{' '}
+        <strong>Para exercer seus direitos, procure a controladora.</strong> É
+        ela quem responde ao titular. O Encarregado dela consta do contrato de
+        prestação do atendimento e da política de privacidade dela.
+      </p>
+      <p className="Paragraph">
+        Encarregado indicado pelo operador:{' '}
         <Todo>
-          nome do Encarregado do {config.appName} e canal dedicado — art. 41, §1º
+          nome completo do Encarregado — e, se for pessoa jurídica, razão social
+          mais o nome do responsável (art. 41, §1º e Res. CD/ANPD 18/2024)
         </Todo>
       </p>
       <p className="Paragraph">
-        Enquanto o canal definitivo não for publicado, escreva para{' '}
+        <strong>Canal de atendimento ao titular:</strong>{' '}
         <a className="A" href={`mailto:${config.email}`}>
           {config.email}
         </a>
-        . Se o pedido couber à controladora, nós o encaminhamos e avisamos você.
+        . Se o pedido couber à controladora, encaminhamos a ela sem demora e
+        avisamos você.
       </p>
 
       <h2 className="H2">3. A quem esta política se aplica</h2>
@@ -415,7 +421,10 @@ export default function Privacy() {
         proteção contra acesso indevido aos seus próprios dados.
       </p>
       <p className="Paragraph">
-        Prazo de resposta: <Todo>prazo adotado, e prazo de encaminhamento</Todo>
+        <strong>Prazo de resposta: até 15 dias</strong>, contados do recebimento
+        do pedido, conforme o art. 19, II da LGPD. Quando o pedido precisar ser
+        encaminhado à controladora, encaminhamos sem demora e o prazo de
+        resposta corre para ela.
       </p>
       <p className="Paragraph">
         Você também pode peticionar diretamente à Autoridade Nacional de
