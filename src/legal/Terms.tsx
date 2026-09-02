@@ -19,7 +19,7 @@ export default function Terms() {
       </p>
 
       <p className="Paragraph">
-        Última atualização: <Todo>data da publicação definitiva</Todo>
+        Última atualização: 2 de setembro de 2026
       </p>
 
       <TodoBlock>
@@ -242,9 +242,10 @@ export default function Terms() {
 
       <h2 className="H2">14. Lei aplicável e foro</h2>
       <p className="Paragraph">
-        Estes Termos são regidos pelas leis brasileiras. Fica eleito o foro de{' '}
-        <Todo>comarca do foro de eleição</Todo>, com renúncia a qualquer outro,
-        ressalvada a competência legal do domicílio do consumidor.
+        Estes Termos são regidos pelas leis brasileiras. Fica eleito o foro da
+        Comarca de Teresópolis, Estado do Rio de Janeiro, onde a operadora tem
+        sede, com renúncia a qualquer outro, ressalvada a competência legal do
+        domicílio do consumidor.
       </p>
 
       <h2 className="H2">15. Contato</h2>

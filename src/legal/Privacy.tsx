@@ -27,7 +27,7 @@ export default function Privacy() {
       </p>
 
       <p className="Paragraph">
-        Última atualização: <Todo>data da publicação definitiva</Todo>
+        Última atualização: 2 de setembro de 2026
       </p>
 
       <TodoBlock>
@@ -280,12 +280,14 @@ export default function Privacy() {
       <p className="Paragraph">
         Parte dos pacientes é idosa ou está impossibilitada de manifestar
         vontade, e o cadastro é feito por familiar, responsável legal ou pela
-        própria controladora. A regra de representação e a coleta do
-        consentimento do responsável são definidas pela controladora;{' '}
-        <Todo>
-          mecanismo que a plataforma oferece para registrar essa representação
-        </Todo>
-        .
+        própria controladora.
+      </p>
+      <p className="Paragraph">
+        O cadastro do paciente e a verificação de quem o representa são
+        realizados <strong>pela controladora, fora do aplicativo</strong>. A
+        plataforma não coleta declaração de representação nem manifestação do
+        responsável: esses registros ficam com a controladora, no contrato de
+        prestação do atendimento.
       </p>
       <p className="Paragraph">
         Quando houver criança ou adolescente, o tratamento observa o art. 14 da
@@ -353,9 +355,17 @@ export default function Privacy() {
         Há, no entanto, transferência internacional em dois casos: o{' '}
         <strong>Google Maps</strong>, que recebe endereço e coordenadas, e o{' '}
         <strong>OneSignal</strong>, que recebe o identificador de notificação —
-        ambos com processamento fora do Brasil. Essas transferências se apoiam
-        em <Todo>base do art. 33 e garantias contratuais dos fornecedores</Todo>
-        .
+        ambos com processamento fora do Brasil.
+      </p>
+      <p className="Paragraph">
+        Essas transferências se apoiam no <strong>art. 33, II</strong> da LGPD —
+        garantias firmadas contratualmente com os fornecedores, por meio das
+        cláusulas-padrão contratuais aprovadas pela Resolução CD/ANPD nº
+        19/2024.{' '}
+        <Todo>
+          confirmar que os contratos com Google e OneSignal já incorporam as
+          cláusulas-padrão — o prazo de adequação encerrou em 23/08/2025
+        </Todo>
       </p>
 
       <h2 className="H2">9. Por quanto tempo guardamos</h2>
