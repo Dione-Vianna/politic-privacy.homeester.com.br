@@ -1,0 +1,55 @@
+name: deploy politic-privacy to s3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Dois deploys simultâneos sincronizando o mesmo bucket se atropelam.
+concurrency:
+  group: deploy-politic-privacy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (type-check + pré-renderização)
+        run: npm run build
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      # Assets levam hash no nome: podem ser cacheados para sempre.
+      - name: Publicar assets
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+            --exclude "*.html" --exclude "robots.txt" --exclude "sitemap.xml" \
+            --cache-control "public,max-age=31536000,immutable"
+
+      # HTML tem URL fixa: precisa revalidar, senão a correção de um texto
+      # legal fica presa no cache do navegador do usuário.
+      - name: Publicar HTML
+        run: |
+          aws s3 sync ./dist s3://${{ secrets.AWS_S3_BUCKET }} --delete \
+            --exclude "*" --include "*.html" --include "robots.txt" --include "sitemap.xml" \
+            --cache-control "public,max-age=0,must-revalidate"
+
+      - name: Invalidar cache do CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"

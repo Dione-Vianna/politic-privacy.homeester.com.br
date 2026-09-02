@@ -1,0 +1,149 @@
+:root {
+  --ink: #3f3f3f;
+  --ink-soft: #6b6b6b;
+  --rule: #e4e4e7;
+  --accent: #1f6feb;
+  --surface: #ffffff;
+  --ground: #fafafa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+.SiteHeader {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+
+.SiteHeaderInner,
+.SiteFooterInner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 20px;
+}
+
+.SiteHeaderInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.SiteBrand {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.SiteNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+
+.SiteNav a {
+  text-decoration: none;
+}
+
+.SiteNav a:hover {
+  text-decoration: underline;
+}
+
+.SiteNav a[aria-current='page'] {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+main {
+  background: var(--surface);
+}
+
+.SiteFooter {
+  border-top: 1px solid var(--rule);
+  background: var(--ground);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.SiteFooterInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+/* Home */
+.Home {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 20px 72px;
+}
+
+.HomeTitle {
+  font-size: 2em;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.HomeLead {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 36px;
+  max-width: 52ch;
+}
+
+.HomeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.HomeCard {
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.HomeCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.HomeCardTitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 6px;
+}
+
+.HomeCardText {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 700px) {
+  .HomeList { grid-template-columns: 1fr 1fr; }
+}

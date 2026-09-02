@@ -1,0 +1,24 @@
+{
+  "IndexDocument": { "Suffix": "index.html" },
+  "ErrorDocument": { "Key": "index.html" },
+  "RoutingRules": [
+    {
+      "Condition": { "KeyPrefixEquals": "privacy" },
+      "Redirect": {
+        "HttpRedirectCode": "301",
+        "Protocol": "https",
+        "HostName": "politic-privacy.homeester.com.br",
+        "ReplaceKeyWith": "politica-de-privacidade/"
+      }
+    },
+    {
+      "Condition": { "KeyPrefixEquals": "terms" },
+      "Redirect": {
+        "HttpRedirectCode": "301",
+        "Protocol": "https",
+        "HostName": "politic-privacy.homeester.com.br",
+        "ReplaceKeyWith": "termos-de-servico/"
+      }
+    }
+  ]
+}
