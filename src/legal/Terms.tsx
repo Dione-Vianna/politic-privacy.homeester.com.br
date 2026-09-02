@@ -48,6 +48,26 @@ export default function Terms() {
         registros é do profissional de saúde e da empresa que o emprega.
       </p>
 
+      <h3 className="H3">2.1 Papel de cada parte no tratamento de dados</h3>
+      <p className="Paragraph">
+        A empresa contratante é a <strong>controladora</strong> dos dados dos
+        pacientes e dos profissionais: é ela quem decide o que se coleta e para
+        quê. O {config.appName} atua como <strong>operador</strong>, tratando
+        esses dados por conta e sob instrução dela (art. 5º, VI e VII da LGPD).
+      </p>
+      <p className="Paragraph">
+        As obrigações recíprocas dessa relação são reguladas pelo contrato entre
+        as partes:{' '}
+        <Todo>
+          contrato de tratamento de dados entre controladora e operador — art. 39
+        </Todo>
+        . Os detalhes estão na{' '}
+        <a className="A" href={routes.privacy}>
+          Política de Privacidade
+        </a>
+        .
+      </p>
+
       <h2 className="H2">3. Quem pode usar</h2>
       <p className="Paragraph">
         O acesso é fornecido pela empresa contratante aos seus profissionais e,
@@ -129,9 +149,10 @@ export default function Terms() {
         legislação de direitos autorais e propriedade industrial.
       </p>
       <p className="Paragraph">
-        Os dados inseridos pela empresa contratante e por seus profissionais
-        permanecem sob titularidade dela e dos respectivos titulares. Nós os
-        tratamos conforme a{' '}
+        Os dados inseridos pela empresa contratante e por seus profissionais não
+        nos pertencem. Permanecem sob controle da contratante, na condição de
+        controladora, e sob os direitos dos respectivos titulares. Nós apenas os
+        tratamos como operador, conforme a{' '}
         <a className="A" href={routes.privacy}>
           Política de Privacidade
         </a>

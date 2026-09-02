@@ -24,41 +24,73 @@ export default function Privacy() {
 
       <TodoBlock>
         <strong>Pendências antes de publicar.</strong> Este documento descreve
-        corretamente o que o aplicativo faz, mas depende de decisões que só o
-        jurídico pode tomar. Todos os marcadores destacados precisam ser
-        resolvidos e removidos. O mais importante é o primeiro: definir se o{' '}
-        {config.appName} é controlador ou operador dos dados, porque isso muda
-        quem responde ao titular.
+        corretamente o que o aplicativo faz e já reflete a divisão de papéis
+        definida: a empresa de atendimento é controladora e o {config.appName} é
+        operador. Restam decisões que dependem do jurídico — todos os marcadores
+        destacados precisam ser resolvidos e removidos.
       </TodoBlock>
 
-      <h2 className="H2">1. Quem trata seus dados</h2>
+      <h2 className="H2">1. Quem trata seus dados e em que papel</h2>
       <p className="Paragraph">
-        Controlador: <Todo>razão social, CNPJ e endereço completo</Todo>
+        O {config.appName} é uma plataforma contratada por empresas de
+        atendimento domiciliar. Quem decide quais dados serão coletados, para
+        quê e por quanto tempo é <strong>a empresa que presta o seu
+        atendimento</strong> — e não nós.
       </p>
-      <TodoBlock>
-        <strong>Definir o papel de cada parte.</strong> O {config.appName} é uma
-        plataforma usada por empresas de atendimento domiciliar, que contratam o
-        serviço para registrar os atendimentos de seus próprios pacientes.
-        Juridicamente isso costuma configurar a empresa contratante como{' '}
-        <strong>controladora</strong> (ela decide quais dados coletar e para
-        quê) e o {config.appName} como <strong>operador</strong> (art. 5º, VI e
-        VII). Se for esse o caso, esta política precisa dizer isso com clareza e
-        indicar a quem o titular deve se dirigir — e é recomendável um contrato
-        de tratamento de dados entre as partes.
-      </TodoBlock>
+
+      <Table head={['Papel', 'Quem é', 'O que decide']}>
+        <tr>
+          <td><strong>Controladora</strong><br />art. 5º, VI</td>
+          <td>A empresa de atendimento domiciliar que presta o serviço ao paciente</td>
+          <td>Quais dados coletar, com que finalidade, com que base legal e por quanto tempo guardar</td>
+        </tr>
+        <tr>
+          <td><strong>Operador</strong><br />art. 5º, VII</td>
+          <td>{config.appName}</td>
+          <td>Nada por conta própria. Tratamos os dados exclusivamente por conta e sob instrução da controladora</td>
+        </tr>
+      </Table>
+
+      <p className="Paragraph">
+        Como operador, o {config.appName} <strong>não</strong> usa esses dados
+        para finalidade própria, não os vende, não os utiliza para publicidade e
+        não os compartilha fora das instruções recebidas e das obrigações
+        legais.
+      </p>
+
+      <p className="Paragraph">
+        Identificação do operador:{' '}
+        <Todo>razão social, CNPJ e endereço completo do {config.appName}</Todo>
+      </p>
+
+      <p className="Paragraph">
+        Identificação da controladora: é a empresa com quem você ou seu
+        responsável contratou o atendimento.{' '}
+        <Todo>
+          como o titular identifica a controladora — nome exibido no aplicativo,
+          contrato de prestação ou lista publicada
+        </Todo>
+      </p>
 
       <h2 className="H2">2. Encarregado pelo tratamento de dados (DPO)</h2>
       <p className="Paragraph">
+        <strong>Para exercer seus direitos, procure a controladora.</strong> É
+        ela quem responde ao titular. O Encarregado dela é indicado no contrato
+        de prestação do atendimento ou na política de privacidade dela própria.
+      </p>
+      <p className="Paragraph">
+        O {config.appName}, como operador, mantém seu próprio canal para
+        assuntos de proteção de dados relativos à plataforma:{' '}
         <Todo>
-          nome do Encarregado e canal de contato — obrigatório pelo art. 41, §1º
+          nome do Encarregado do {config.appName} e canal dedicado — art. 41, §1º
         </Todo>
       </p>
       <p className="Paragraph">
-        Enquanto o canal definitivo não for publicado, o contato é{' '}
+        Enquanto o canal definitivo não for publicado, escreva para{' '}
         <a className="A" href={`mailto:${config.email}`}>
           {config.email}
         </a>
-        .
+        . Se o pedido couber à controladora, nós o encaminhamos e avisamos você.
       </p>
 
       <h2 className="H2">3. A quem esta política se aplica</h2>
@@ -136,8 +168,15 @@ export default function Privacy() {
       </p>
 
       <h2 className="H2">5. Para que usamos e com que base legal</h2>
+      <p className="Paragraph">
+        A base legal de cada tratamento é <strong>definida pela
+        controladora</strong>, não pelo {config.appName}. O quadro abaixo
+        descreve as bases usuais para cada finalidade da plataforma; a
+        controladora pode adotar enquadramento diverso, e prevalece o que ela
+        informar a você.
+      </p>
 
-      <Table head={['Finalidade', 'Dados', 'Base legal']}>
+      <Table head={['Finalidade', 'Dados', 'Base legal usual']}>
         <tr>
           <td>Criar e manter a conta de acesso</td>
           <td>Cadastrais</td>
@@ -172,9 +211,9 @@ export default function Privacy() {
 
       <h3 className="H3">5.1 Dados de saúde exigem base própria</h3>
       <TodoBlock>
-        <strong>Escolher a base legal do art. 11.</strong> Dados de saúde não
-        podem ser tratados pelas bases do art. 7º. O art. 11 admite duas rotas
-        aplicáveis aqui:
+        <strong>Escolher a base legal do art. 11 — decisão da controladora.</strong>{' '}
+        Dados de saúde não podem ser tratados pelas bases do art. 7º. O art. 11
+        admite duas rotas aplicáveis aqui:
         <ul className="Ul">
           <li className="Li">
             <strong>Inciso I</strong> — consentimento específico e destacado do
@@ -190,19 +229,21 @@ export default function Privacy() {
             de saúde.
           </li>
         </ul>
-        A escolha determina se o aplicativo precisa ou não coletar consentimento
-        destacado antes do primeiro registro clínico — ou seja, tem consequência
-        direta no produto.
+        A escolha é da controladora, mas tem consequência direta no produto: se
+        for o inciso I, o aplicativo precisa coletar e registrar consentimento
+        destacado antes do primeiro registro clínico, com possibilidade de
+        revogação. O {config.appName} precisa oferecer esse mecanismo às
+        controladoras que o adotarem.
       </TodoBlock>
 
       <h2 className="H2">6. Pacientes sob representação legal</h2>
       <p className="Paragraph">
         Parte dos pacientes é idosa ou está impossibilitada de manifestar
         vontade, e o cadastro é feito por familiar, responsável legal ou pela
-        empresa contratante. Nesses casos o tratamento observa{' '}
+        própria controladora. A regra de representação e a coleta do
+        consentimento do responsável são definidas pela controladora;{' '}
         <Todo>
-          regra de representação adotada e forma de registro do consentimento do
-          responsável
+          mecanismo que a plataforma oferece para registrar essa representação
         </Todo>
         .
       </p>
@@ -212,27 +253,31 @@ export default function Privacy() {
         responsável legal e o melhor interesse do titular.
       </p>
 
-      <h2 className="H2">7. Com quem compartilhamos</h2>
+      <h2 className="H2">7. Quem tem acesso aos dados</h2>
       <p className="Paragraph">
-        Não vendemos dados pessoais e não os usamos para publicidade. O
-        compartilhamento se limita ao necessário para prestar o serviço:
+        Não vendemos dados pessoais e não os usamos para publicidade. O acesso
+        se limita ao necessário para prestar o serviço.
       </p>
 
-      <Table head={['Quem recebe', 'O que recebe', 'Por quê']}>
-        <tr>
-          <td>Profissionais e cuidadores designados</td>
-          <td>Cadastro e histórico clínico do paciente atendido</td>
-          <td>Prestar o atendimento</td>
-        </tr>
-        <tr>
-          <td>Empresa contratante do atendimento</td>
-          <td>Atendimentos, evolução e jornada</td>
-          <td>Gestão do serviço que ela presta</td>
-        </tr>
+      <h3 className="H3">7.1 Dentro do serviço contratado</h3>
+      <p className="Paragraph">
+        A <strong>controladora</strong> e os profissionais que ela designa
+        acessam os dados dos pacientes sob seus cuidados. Isso não é
+        compartilhamento com terceiro: são eles que prestam o atendimento e a
+        quem os dados pertencem sob responsabilidade.
+      </p>
+
+      <h3 className="H3">7.2 Suboperadores que utilizamos</h3>
+      <p className="Paragraph">
+        Para operar a plataforma, contratamos fornecedores que tratam dados por
+        nossa conta, sob obrigação contratual de confidencialidade e segurança:
+      </p>
+
+      <Table head={['Fornecedor', 'O que trata', 'Por quê']}>
         <tr>
           <td>Amazon Web Services</td>
           <td>Todos os dados armazenados</td>
-          <td>Hospedagem e processamento (operador)</td>
+          <td>Hospedagem e processamento</td>
         </tr>
         <tr>
           <td>OneSignal</td>
@@ -251,9 +296,11 @@ export default function Privacy() {
         </tr>
       </Table>
 
+      <h3 className="H3">7.3 Obrigação legal</h3>
       <p className="Paragraph">
-        Também podemos compartilhar dados para cumprir obrigação legal ou
-        atender ordem de autoridade competente.
+        Podemos fornecer dados para cumprir obrigação legal ou atender ordem de
+        autoridade competente. Sempre que a lei permitir, informamos a
+        controladora antes.
       </p>
 
       <h2 className="H2">8. Transferência internacional</h2>
@@ -273,9 +320,15 @@ export default function Privacy() {
 
       <h2 className="H2">9. Por quanto tempo guardamos</h2>
       <p className="Paragraph">
+        O prazo é <strong>definido pela controladora</strong>, respeitados os
+        mínimos legais. Encerrado o contrato com a controladora, o{' '}
+        {config.appName} elimina ou devolve os dados conforme instrução dela,
+        salvo quando a lei obrigar a guarda (art. 16).
+      </p>
+      <p className="Paragraph">
+        Prazos aplicados pela plataforma:{' '}
         <Todo>
-          prazo de retenção por categoria de dado, e o que acontece ao fim do
-          prazo
+          prazo por categoria de dado e o que acontece ao fim do contrato
         </Todo>
       </p>
       <TodoBlock>
@@ -313,13 +366,22 @@ export default function Privacy() {
         <li className="Li">revogação do consentimento.</li>
       </ol>
       <p className="Paragraph">
-        Para exercer qualquer um deles, escreva para{' '}
+        <strong>Dirija o pedido à controladora</strong> — a empresa que presta o
+        seu atendimento. É ela quem responde ao titular e quem decide sobre os
+        dados.
+      </p>
+      <p className="Paragraph">
+        Se preferir, escreva para{' '}
         <a className="A" href={`mailto:${config.email}`}>
           {config.email}
         </a>
-        . Responderemos em <Todo>prazo de resposta adotado</Todo>. Podemos pedir
-        informações que confirmem sua identidade antes de atender ao pedido — é
-        uma proteção contra acesso indevido aos seus próprios dados.
+        : como operador, encaminhamos o pedido à controladora e prestamos a ela
+        o apoio técnico necessário para atendê-lo (art. 39). Podemos pedir
+        informações que confirmem sua identidade antes de dar seguimento — é uma
+        proteção contra acesso indevido aos seus próprios dados.
+      </p>
+      <p className="Paragraph">
+        Prazo de resposta: <Todo>prazo adotado, e prazo de encaminhamento</Todo>
       </p>
       <p className="Paragraph">
         Você também pode peticionar diretamente à Autoridade Nacional de
@@ -336,8 +398,11 @@ export default function Privacy() {
       </p>
       <p className="Paragraph">
         Nenhum sistema é totalmente imune. Caso ocorra incidente de segurança
-        com risco relevante aos titulares, comunicaremos a ANPD e os titulares
-        afetados, conforme o art. 48.
+        com risco relevante, o {config.appName} comunica <strong>a
+        controladora</strong> sem demora, com as informações necessárias para
+        que ela avalie o risco e faça a comunicação à ANPD e aos titulares
+        afetados, conforme o art. 48. A responsabilidade do operador segue o
+        art. 42.
       </p>
 
       <h2 className="H2">12. Permissões do aplicativo</h2>
