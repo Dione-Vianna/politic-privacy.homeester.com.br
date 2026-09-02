@@ -1,4 +1,4 @@
-import { config } from './config';
+import { config, controladora, operador } from './config';
 import { Todo, TodoBlock } from './Todo';
 import { Table } from './Table';
 import './styles.css';
@@ -16,6 +16,14 @@ export default function Privacy() {
           {config.appOrigin}
         </a>
         . Ela segue a Lei nº 13.709/2018 (LGPD).
+      </p>
+
+      <p className="Paragraph">
+        <strong>Uma definição, para evitar confusão.</strong> “Home care” também
+        é o nome do tipo de serviço — atendimento domiciliar de saúde. Nestes
+        documentos, <strong>{config.appName}</strong> se refere sempre à
+        plataforma de software; o atendimento em si é prestado pela empresa
+        contratante, identificada em 1.1.
       </p>
 
       <p className="Paragraph">
@@ -64,13 +72,13 @@ export default function Privacy() {
         domiciliar. Atualmente:
       </p>
       <p className="Paragraph">
-        <strong>HOME ESTER SAÚDE DOMICILIAR LTDA</strong>
+        <strong>{controladora.razaoSocial}</strong>
         <br />
-        CNPJ 42.456.578/0001-05
+        CNPJ {controladora.cnpj}
         <br />
-        Rua Heitor de Moura Estevão, 208 — Várzea
+        {controladora.endereco}
         <br />
-        Teresópolis/RJ — CEP 25953-090
+        {controladora.cidade}
       </p>
       <p className="Paragraph">
         Caso o seu atendimento seja prestado por outra empresa que utilize esta
@@ -81,9 +89,16 @@ export default function Privacy() {
       <h3 className="H3">1.2 Operador</h3>
       <p className="Paragraph">
         A plataforma {config.appName} é desenvolvida e operada por{' '}
-        <strong>{config.developer}</strong>.
+        {operador.nome}:
+      </p>
+      <p className="Paragraph">
+        <strong>{operador.razaoSocial}</strong>
         <br />
-        <Todo>CNPJ e endereço completo da {config.developer}</Todo>
+        CNPJ {operador.cnpj}
+        <br />
+        {operador.endereco}
+        <br />
+        {operador.cidade}
       </p>
 
       <h2 className="H2">2. Encarregado pelo tratamento de dados (DPO)</h2>

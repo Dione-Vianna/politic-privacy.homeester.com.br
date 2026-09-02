@@ -1,4 +1,4 @@
-import { config } from './config';
+import { config, controladora, operador } from './config';
 import { Todo, TodoBlock } from './Todo';
 import { routes } from '../routes';
 import './styles.css';
@@ -29,16 +29,28 @@ export default function Terms() {
 
       <h2 className="H2">1. Quem presta o serviço</h2>
       <p className="Paragraph">
-        A plataforma {config.appName} é desenvolvida e operada por{' '}
-        <strong>{config.developer}</strong>.
-        <br />
-        <Todo>CNPJ e endereço completo da {config.developer}</Todo>
+        <strong>Uma definição, para evitar confusão.</strong> “Home care”
+        também é o nome do tipo de serviço — atendimento domiciliar de saúde.
+        Nestes Termos, <strong>{config.appName}</strong> se refere sempre à
+        plataforma de software.
       </p>
       <p className="Paragraph">
-        O atendimento domiciliar em si é prestado pela empresa contratante, que
-        é responsável pelo serviço de saúde perante o paciente. Atualmente:{' '}
-        <strong>HOME ESTER SAÚDE DOMICILIAR LTDA</strong>, CNPJ
-        42.456.578/0001-05, Teresópolis/RJ.
+        A plataforma é desenvolvida e operada por {operador.nome}:
+      </p>
+      <p className="Paragraph">
+        <strong>{operador.razaoSocial}</strong>
+        <br />
+        CNPJ {operador.cnpj}
+        <br />
+        {operador.endereco}
+        <br />
+        {operador.cidade}
+      </p>
+      <p className="Paragraph">
+        O <strong>atendimento domiciliar</strong> em si é prestado pela empresa
+        contratante, responsável pelo serviço de saúde perante o paciente.
+        Atualmente: {controladora.razaoSocial}, CNPJ {controladora.cnpj},{' '}
+        {controladora.cidade}.
       </p>
 
       <h2 className="H2">2. O que é o {config.appName}</h2>
