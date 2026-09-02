@@ -29,7 +29,16 @@ export default function Terms() {
 
       <h2 className="H2">1. Quem presta o serviço</h2>
       <p className="Paragraph">
-        <Todo>razão social, CNPJ e endereço completo</Todo>
+        A plataforma {config.appName} é desenvolvida e operada por{' '}
+        <strong>{config.developer}</strong>.
+        <br />
+        <Todo>CNPJ e endereço completo da {config.developer}</Todo>
+      </p>
+      <p className="Paragraph">
+        O atendimento domiciliar em si é prestado pela empresa contratante, que
+        é responsável pelo serviço de saúde perante o paciente. Atualmente:{' '}
+        <strong>HOME ESTER SAÚDE DOMICILIAR LTDA</strong>, CNPJ
+        42.456.578/0001-05, Teresópolis/RJ.
       </p>
 
       <h2 className="H2">2. O que é o {config.appName}</h2>

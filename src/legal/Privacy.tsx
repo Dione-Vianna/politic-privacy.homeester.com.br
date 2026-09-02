@@ -58,18 +58,32 @@ export default function Privacy() {
         legais.
       </p>
 
+      <h3 className="H3">1.1 Controladora</h3>
       <p className="Paragraph">
-        Identificação do operador:{' '}
-        <Todo>razão social, CNPJ e endereço completo do {config.appName}</Todo>
+        A empresa com quem você ou seu responsável contratou o atendimento
+        domiciliar. Atualmente:
+      </p>
+      <p className="Paragraph">
+        <strong>HOME ESTER SAÚDE DOMICILIAR LTDA</strong>
+        <br />
+        CNPJ 42.456.578/0001-05
+        <br />
+        Rua Heitor de Moura Estevão, 208 — Várzea
+        <br />
+        Teresópolis/RJ — CEP 25953-090
+      </p>
+      <p className="Paragraph">
+        Caso o seu atendimento seja prestado por outra empresa que utilize esta
+        plataforma, a controladora dos seus dados é ela, e a identificação
+        consta do contrato de prestação de serviço.
       </p>
 
+      <h3 className="H3">1.2 Operador</h3>
       <p className="Paragraph">
-        Identificação da controladora: é a empresa com quem você ou seu
-        responsável contratou o atendimento.{' '}
-        <Todo>
-          como o titular identifica a controladora — nome exibido no aplicativo,
-          contrato de prestação ou lista publicada
-        </Todo>
+        A plataforma {config.appName} é desenvolvida e operada por{' '}
+        <strong>{config.developer}</strong>.
+        <br />
+        <Todo>CNPJ e endereço completo da {config.developer}</Todo>
       </p>
 
       <h2 className="H2">2. Encarregado pelo tratamento de dados (DPO)</h2>
@@ -229,6 +243,11 @@ export default function Privacy() {
             de saúde.
           </li>
         </ul>
+        A controladora atual está registrada sob o CNAE 8630503 — atividade
+        médica ambulatorial —, o que é elemento a favor do enquadramento na
+        alínea “f”. A confirmação cabe ao jurídico.
+        <br />
+        <br />
         A escolha é da controladora, mas tem consequência direta no produto: se
         for o inciso I, o aplicativo precisa coletar e registrar consentimento
         destacado antes do primeiro registro clínico, com possibilidade de
