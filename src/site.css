@@ -148,27 +148,6 @@ main {
   .HomeList { grid-template-columns: 1fr 1fr; }
 }
 
-/* Marcador de pendência jurídica. Propositalmente berrante: nenhum destes
-   pode sobreviver à publicação do documento. */
-.Todo {
-  display: inline-block;
-  background: #fff4d6;
-  border: 1px solid #e0a800;
-  border-radius: 4px;
-  padding: 1px 7px;
-  font-size: 0.88em;
-  font-weight: 500;
-  color: #7a5600;
-}
-
-.TodoBlock {
-  background: #fff9e8;
-  border-left: 4px solid #e0a800;
-  border-radius: 0 6px 6px 0;
-  padding: 14px 18px;
-  margin: 16px 0;
-  font-size: 0.95em;
-}
 
 /* Tabelas de inventário de dados. Rolam sozinhas no celular. */
 .TableWrap {
